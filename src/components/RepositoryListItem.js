@@ -3,6 +3,7 @@ import StarIcon from '@material-ui/icons/Star';
 import PeopleIcon from '@material-ui/icons/People';
 import { Typography, Chip, makeStyles } from "@material-ui/core";
 import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails } from "@material-ui/core";
+import IssueList from "src/components/IssueList";
 
 const useStyles = makeStyles({
   root: {
@@ -59,7 +60,12 @@ const RepositoryListItem = ({ repo, expanded, onToggled }) => {
         />
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
-        Issues here!
+        {expanded && (
+          <IssueList 
+            repoName={name}
+            repoOwner={login}
+          />
+        )}
       </ExpansionPanelDetails>
     </ExpansionPanel>
   );
