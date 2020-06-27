@@ -1,28 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
 import { Dialog, DialogContent, ListItem, ListItemText } from "@material-ui/core";
+import useBoolean from "src/hooks/useBoolean";
 
 const IssueListItem = ({ title, bodyHTML }) => {
-  const [dialogOpened, setDialodOpened] = useState(false);
-
-  const showDialog = () => setDialodOpened(true);
-
-  const hideDialog = () => setDialodOpened(false);
+  const { value: isDialogOpened, setTrue: showDialog, setFalse: hideDialog } = useBoolean(false);
 
   return (
     <>
-      <ListItem 
+      <ListItem
         button
         onClick={showDialog}
-      > 
+      >
         <ListItemText>{title}</ListItemText>
       </ListItem>
       <Dialog
         maxWidth="xl"
-        open={dialogOpened}
+        open={isDialogOpened}
         onClose={hideDialog}
       >
         <DialogContent>
-          <div dangerouslySetInnerHTML={{__html: bodyHTML}} />
+          <div dangerouslySetInnerHTML={{ __html: bodyHTML }} />
         </DialogContent>
       </Dialog>
     </>
