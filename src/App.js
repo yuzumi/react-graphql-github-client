@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import apolloClient from "src/apollo-client";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { SearchBar, RepositoryList } from "src/components";
@@ -7,9 +7,9 @@ import config from "src/config";
 
 const useStyles = makeStyles({
   title: {
-    marginTop: '1rem',
-    marginBottom: '1rem',
-    textAlign: 'center'
+    marginTop: "1rem",
+    marginBottom: "1rem",
+    textAlign: "center"
   }
 });
 
@@ -35,7 +35,7 @@ const App = () => {
           value={searchTerm}
           onChange={setSearchTerm}
         />
-        <RepositoryList 
+        <RepositoryList
           searchTerm={searchTerm}
         />
       </Container>

@@ -6,11 +6,11 @@ import getRepoIssues from "src/queries/get-repo-issues";
 
 const useStyles = makeStyles({
   root: {
-    flexDirection: 'column'
+    flexDirection: "column"
   },
   spinnerContainer: {
-    display: 'flex',
-    justifyContent: 'space-around'
+    display: "flex",
+    justifyContent: "space-around"
   }
 });
 

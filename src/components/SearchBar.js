@@ -4,18 +4,18 @@ import { TextField, InputAdornment, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
   input: {
-    width: '100%'
+    width: "100%"
   }
 });
 
 const SearchBar = ({ value, onChange }) => {
   const classes = useStyles();
-  
-  const handleChange = event => 
+
+  const handleChange = event =>
     onChange(event.target.value);
 
   return (
-    <TextField 
+    <TextField
       className={classes.input}
       label="Search for repos..."
       type="search"

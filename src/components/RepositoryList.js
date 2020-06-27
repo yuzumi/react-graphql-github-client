@@ -7,13 +7,13 @@ import RepositoryListItem from "src/components/RepositoryListItem";
 
 const useStyles = makeStyles({
   note: {
-    marginTop: '1rem',
-    textAlign: 'center'
+    marginTop: "1rem",
+    textAlign: "center"
   },
   spinnerContainer: {
-    display: 'flex',
-    justifyContent: 'space-around',
-    marginTop: '1rem'
+    display: "flex",
+    justifyContent: "space-around",
+    marginTop: "1rem"
   }
 });
 
@@ -70,7 +70,7 @@ const RepositoryList = ({ searchTerm }) => {
   return (
     <div>
       {data.search.edges.map((repo, index) => (
-        <RepositoryListItem 
+        <RepositoryListItem
           repo={repo}
           expanded={expandedRepo === index}
           onToggled={() => setExpandedRepo(index)}
