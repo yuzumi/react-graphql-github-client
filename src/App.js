@@ -3,6 +3,7 @@ import apolloClient from "src/apollo-client";
 import { ApolloProvider } from "@apollo/react-hooks";
 import { SearchBar, RepositoryList } from "src/components";
 import { Typography, Container, makeStyles } from "@material-ui/core";
+import config from "src/config";
 
 const useStyles = makeStyles({
   title: {
@@ -28,7 +29,7 @@ const App = () => {
           variant="h3"
           className={classes.title}
         >
-          React GraphQL Github Client
+          {config.app.name}
         </Typography>
         <SearchBar
           value={searchTerm}

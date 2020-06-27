@@ -1,9 +1,10 @@
 import ApolloClient from "apollo-boost";
+import config from "src/config";
 
 const apolloClient = new ApolloClient({
-  uri: 'https://api.github.com/graphql',
+  uri: config.api.url,
   headers: {
-    Authorization: `bearer ${process.env.REACT_APP_GITHUB_TOKEN}`
+    Authorization: `bearer ${config.api.token}`
   }
 });
 
